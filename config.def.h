@@ -63,9 +63,9 @@ static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key         function        argument */
-  { MODKEY|ControlMask,           XK_b,       spawn,          {.v = {"brave-browser", NULL}}},
 	{ MODKEY,                       XK_d,       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
+  { MODKEY|ControlMask,           XK_b,       spawn,          {.v = (const char*[]){"brave-browser", NULL}}},
 	{ MODKEY,                       XK_j,       focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,       focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_h,       setmfact,       {.f = -0.05} },
