@@ -65,6 +65,7 @@ static const Key keys[] = {
 	/* modifier                     key         function        argument */
 	{ MODKEY,                       XK_d,       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_m,       spawn,          {.v = (const char*[]){"displaysetup", NULL}} },
   { MODKEY|ControlMask,           XK_b,       spawn,          {.v = (const char*[]){"brave-browser", NULL}}},
   { MODKEY|ControlMask,           XK_p,       spawn,          {.v = (const char*[]){"pavucontrol", NULL}}},
   { MODKEY|ControlMask|Mod1Mask,  XK_c,       spawn,          {.v = (const char*[]){"clion", NULL}}},
