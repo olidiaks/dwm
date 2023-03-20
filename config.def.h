@@ -68,7 +68,6 @@ static const Key keys[] = {
 	/* modifier                     key         function        argument */
 	{ MODKEY,                       XK_d,       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
-  { MODKEY|ControlMask|ShiftMask, XK_p,       spawn,          {.v = (const char*[]){"dmenu-power-managment", NULL}}},
 	{ MODKEY,                       XK_m,       spawn,          {.v = (const char*[]){"displaysetup", NULL}} },
   { MODKEY|ControlMask,           XK_b,       spawn,          {.v = (const char*[]){"brave-browser", NULL}}},
   { MODKEY|ControlMask,           XK_p,       spawn,          {.v = (const char*[]){"pavucontrol", NULL}}},
@@ -81,6 +80,7 @@ static const Key keys[] = {
   { MODKEY|ControlMask,           XK_s,       spawn,          {.v = (const char*[]){"syncthing", NULL}}},
   { MODKEY|ControlMask|Mod1Mask,  XK_s,       spawn,          {.v = (const char*[]){"steam", NULL}}},
   { MODKEY|Mod1Mask,              XK_s,       spawn,          {.v = (const char*[]){"spotify", NULL}}},
+  { MODKEY,                       XK_p,       spawn,          {.v = (const char*[]){"dmenu-power-managment", NULL}}},
 	{ MODKEY,                       XK_j,       focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,       focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_h,       setmfact,       {.f = -0.05} },
