@@ -68,6 +68,7 @@ static const Key keys[] = {
 	/* modifier                     key         function        argument */
 	{ MODKEY,                       XK_d,       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
+  { MODKEY|ControlMask|ShiftMask, XK_d,       spawn,          SHCMD("sleep 1 && xset dpms force off")},
 	{ MODKEY,                       XK_m,       spawn,          {.v = (const char*[]){"displaysetup", NULL}} },
   { MODKEY|ControlMask,           XK_b,       spawn,          {.v = (const char*[]){"brave-browser", NULL}}},
   { MODKEY|ControlMask,           XK_n,       spawn,          {.v = (const char*[]){"thunar", NULL}}},
