@@ -71,50 +71,52 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34
 
 static const Key keys[] = {
 	/* modifier                     key         function        argument */
-	{ MODKEY,                       XK_d,       spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
-  { MODKEY|ShiftMask,             XK_Return,  togglescratch,  {.v = scratchpadcmd } },
-  { 0,                            XF86XK_Calculator, togglescratch,    STCMD("python")},
-  { MODKEY|ControlMask|ShiftMask, XK_d,       spawn,          SHCMD("sleep 1 && xset dpms force off")},
-	{ MODKEY,                       XK_m,       spawn,          {.v = (const char*[]){"displaysetup", NULL}} },
-  { MODKEY|ControlMask,           XK_b,       spawn,          {.v = (const char*[]){"brave-browser", NULL}}},
-  { MODKEY|ControlMask,           XK_n,       spawn,          {.v = (const char*[]){"thunar", NULL}}},
-  { MODKEY|ControlMask,           XK_p,       spawn,          {.v = (const char*[]){"pavucontrol", NULL}}},
-  { MODKEY|ControlMask|Mod1Mask,  XK_c,       spawn,          {.v = (const char*[]){"clion", NULL}}},
-  { MODKEY|ControlMask|Mod1Mask,  XK_w,       spawn,          {.v = (const char*[]){"webstorm", NULL}}},
-  { MODKEY|ControlMask|Mod1Mask,  XK_h,       spawn,          {.v = (const char*[]){"phpstorm", NULL}}},
-  { MODKEY|ControlMask|Mod1Mask,  XK_y,       spawn,          {.v = (const char*[]){"pycharm", NULL}}},
-  { MODKEY|ControlMask|Mod1Mask,  XK_n,       spawn,          {.v = (const char*[]){"netbeans", NULL}}},
-  { MODKEY|ControlMask,           XK_w,       spawn,          {.v = (const char*[]){"libreoffice --writer", NULL}}},
-  { MODKEY|ControlMask,           XK_s,       spawn,          {.v = (const char*[]){"syncthing", NULL}}},
-  { MODKEY|ControlMask|Mod1Mask,  XK_s,       spawn,          {.v = (const char*[]){"steam", NULL}}},
-  { MODKEY|Mod1Mask,              XK_s,       spawn,          {.v = (const char*[]){"spotify", NULL}}},
-  { MODKEY,                       XK_p,       spawn,          {.v = (const char*[]){"dmenu-power-managment", NULL}}},
-	{ MODKEY,                       XK_j,       focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,       focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_h,       setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,       setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_space,   zoom,           {0} },
-	{ MODKEY|ShiftMask,             XK_q,       killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_space,   togglefloating, {0} },
-	{ MODKEY,                       XK_0,       view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,       tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,   focusmon,       {.i = +1 } },
-	{ MODKEY,                       XK_period,  focusmon,       {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_comma,   tagmon,         {.i = +1 } },
-	{ 0,                            XF86XK_AudioMute,		spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-; kill -44 $(pidof dwmblocks)") },{ MODKEY|ShiftMask,             XK_period,  tagmon,         {.i = -1 } },
-	TAGKEYS(                        XK_1,                       0)
-	TAGKEYS(                        XK_2,                       1)
-	TAGKEYS(                        XK_3,                       2)
-	TAGKEYS(                        XK_4,                       3)
-	TAGKEYS(                        XK_5,                       4)
-	TAGKEYS(                        XK_6,                       5)
-	TAGKEYS(                        XK_7,                       6)
-	TAGKEYS(                        XK_8,                       7)
-	TAGKEYS(                        XK_9,                       8)
-	{ MODKEY,                       XK_q,      quit,            {0} },
+	{ MODKEY,                       XK_d,                       spawn,                  {.v = dmenucmd } },
+	{ MODKEY,                       XK_Return,                  spawn,                  {.v = termcmd } },
+    { MODKEY|ShiftMask,             XK_Return,                  togglescratch,          {.v = scratchpadcmd } },
+    { 0,                            XF86XK_Calculator,          togglescratch,          STCMD("python")},
+    { MODKEY|ControlMask|ShiftMask, XK_d,                       spawn,                  SHCMD("sleep 1 && xset dpms force off")},
+	{ MODKEY,                       XK_m,                       spawn,                  {.v = (const char*[]){"displaysetup", NULL}} },
+    { MODKEY|ControlMask,           XK_b,                       spawn,                  {.v = (const char*[]){"brave-browser", NULL}}},
+    { MODKEY|ControlMask,           XK_n,                       spawn,                  {.v = (const char*[]){"thunar", NULL}}},
+    { MODKEY|ControlMask,           XK_p,                       spawn,                  {.v = (const char*[]){"pavucontrol", NULL}}},
+    { MODKEY|ControlMask|Mod1Mask,  XK_c,                       spawn,                  {.v = (const char*[]){"clion", NULL}}},
+    { MODKEY|ControlMask|Mod1Mask,  XK_w,                       spawn,                  {.v = (const char*[]){"webstorm", NULL}}},
+    { MODKEY|ControlMask|Mod1Mask,  XK_h,                       spawn,                  {.v = (const char*[]){"phpstorm", NULL}}},
+    { MODKEY|ControlMask|Mod1Mask,  XK_y,                       spawn,                  {.v = (const char*[]){"pycharm", NULL}}},
+    { MODKEY|ControlMask|Mod1Mask,  XK_n,                       spawn,                  {.v = (const char*[]){"netbeans", NULL}}},
+    { MODKEY|ControlMask,           XK_w,                       spawn,                  {.v = (const char*[]){"libreoffice --writer", NULL}}},
+    { MODKEY|ControlMask,           XK_s,                       spawn,                  {.v = (const char*[]){"syncthing", NULL}}},
+    { MODKEY|ControlMask|Mod1Mask,  XK_s,                       spawn,                  {.v = (const char*[]){"steam", NULL}}},
+    { MODKEY|Mod1Mask,              XK_s,                       spawn,                  {.v = (const char*[]){"spotify", NULL}}},
+	{ MODKEY,                       XK_f,                       setlayout,              {.v = &layouts[3]} },
+	{ MODKEY|ShiftMask,             XK_f,                       setlayout,              {.v = &layouts[0]} },
+    { MODKEY,                       XK_p,                       spawn,                  {.v = (const char*[]){"dmenu-power-managment", NULL}}},
+	{ MODKEY,                       XK_j,                       focusstack,             {.i = +1 } },
+	{ MODKEY,                       XK_k,                       focusstack,             {.i = -1 } },
+	{ MODKEY,                       XK_h,                       setmfact,               {.f = -0.05} },
+	{ MODKEY,                       XK_l,                       setmfact,               {.f = +0.05} },
+	{ MODKEY,                       XK_space,                   zoom,                   {0} },
+	{ MODKEY|ShiftMask,             XK_q,                       killclient,             {0} },
+	{ MODKEY|ShiftMask,             XK_space,                   togglefloating,         {0} },
+	{ MODKEY,                       XK_0,                       view,                   {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_0,                       tag,                    {.ui = ~0 } },
+	{ MODKEY,                       XK_comma,                   focusmon,               {.i = +1 } },
+	{ MODKEY,                       XK_period,                  focusmon,               {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_comma,                   tagmon,                 {.i = +1 } },
+	{ 0,                            XF86XK_AudioMute,		    spawn,		            SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioRaiseVolume,	spawn,		            SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+; kill -44 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioLowerVolume,	spawn,		            SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-; kill -44 $(pidof dwmblocks)") },{ MODKEY|ShiftMask,             XK_period,  tagmon,         {.i = -1 } },
+	TAGKEYS(                        XK_1,                                               0)
+	TAGKEYS(                        XK_2,                                               1)
+	TAGKEYS(                        XK_3,                                               2)
+	TAGKEYS(                        XK_4,                                               3)
+	TAGKEYS(                        XK_5,                                               4)
+	TAGKEYS(                        XK_6,                                               5)
+	TAGKEYS(                        XK_7,                                               6)
+	TAGKEYS(                        XK_8,                                               7)
+	TAGKEYS(                        XK_9,                                               8)
+	{ MODKEY,                       XK_q,                       quit,                   {0} },
 };
 
 /* button definitions */
