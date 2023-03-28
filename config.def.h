@@ -48,6 +48,8 @@ static const Layout layouts[] = {
   { "[\\]",      dwindle },
 };
 
+#include <X11/XF86keysym.h>
+
 /* key definitions */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
@@ -58,6 +60,7 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#define STCMD(cmd) { .v = (const char*[]){ "st", "-t", scratchpadname, "-g", "120x34", "-e", cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -70,6 +73,8 @@ static const Key keys[] = {
 	/* modifier                     key         function        argument */
 	{ MODKEY,                       XK_d,       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,  spawn,          {.v = termcmd } },
+  { MODKEY|ShiftMask,             XK_Return,  togglescratch,  {.v = scratchpadcmd } },
+  { 0,                            XF86XK_Calculator, togglescratch,    STCMD("python")},
   { MODKEY|ControlMask|ShiftMask, XK_d,       spawn,          SHCMD("sleep 1 && xset dpms force off")},
 	{ MODKEY,                       XK_m,       spawn,          {.v = (const char*[]){"displaysetup", NULL}} },
   { MODKEY|ControlMask,           XK_b,       spawn,          {.v = (const char*[]){"brave-browser", NULL}}},
@@ -97,7 +102,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_comma,   focusmon,       {.i = +1 } },
 	{ MODKEY,                       XK_period,  focusmon,       {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_comma,   tagmon,         {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_period,  tagmon,         {.i = -1 } },
+	{ 0,                            XF86XK_AudioMute,		spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-; kill -44 $(pidof dwmblocks)") },{ MODKEY|ShiftMask,             XK_period,  tagmon,         {.i = -1 } },
 	TAGKEYS(                        XK_1,                       0)
 	TAGKEYS(                        XK_2,                       1)
 	TAGKEYS(                        XK_3,                       2)
