@@ -83,6 +83,7 @@ static const Key keys[] = {
   { MODKEY|ControlMask,           XK_w,                       spawn,                  {.v = (const char*[]){"libreoffice", "--writer", NULL}}},
   { MODKEY|ControlMask,           XK_n,                       spawn,                  {.v = (const char*[]){"thunar", NULL}}},
   { MODKEY|ControlMask,           XK_p,                       spawn,                  {.v = (const char*[]){"pavucontrol", NULL}}},
+  { MODKEY|ControlMask|Mod1Mask,  XK_a,                       spawn,                  {.v = (const char*[]){"studio", NULL}}},
   { MODKEY|ControlMask|Mod1Mask,  XK_c,                       spawn,                  {.v = (const char*[]){"clion", NULL}}},
   { MODKEY|ControlMask|Mod1Mask,  XK_w,                       spawn,                  {.v = (const char*[]){"webstorm", NULL}}},
   { MODKEY|ControlMask|Mod1Mask,  XK_h,                       spawn,                  {.v = (const char*[]){"phpstorm", NULL}}},
