@@ -80,6 +80,7 @@ static const Key keys[] = {
   { MODKEY, XK_Print,                       spawn,                  SHCMD("flameshot screen -c")},
 	{ MODKEY,                       XK_m,                       spawn,                  {.v = (const char*[]){"displaysetup", NULL}} },
   { MODKEY|ControlMask,           XK_b,                       spawn,                  {.v = (const char*[]){"brave-browser", NULL}}},
+  { MODKEY|ControlMask,           XK_m,                       spawn,                  {.v = (const char*[]){"brave-browser","--app=https://www.facebook.com/messages", NULL}}},
   { MODKEY|ControlMask,           XK_w,                       spawn,                  {.v = (const char*[]){"libreoffice", "--writer", NULL}}},
   { MODKEY|ControlMask,           XK_n,                       spawn,                  {.v = (const char*[]){"thunar", NULL}}},
   { MODKEY|ControlMask,           XK_p,                       spawn,                  {.v = (const char*[]){"pavucontrol", NULL}}},
