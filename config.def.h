@@ -99,7 +99,6 @@ static const Key keys[] = {
   { MODKEY,                       XK_p,                       spawn,                  {.v = (const char*[]){"dmenu-power-managment", NULL}}},
   { MODKEY|ShiftMask,             XK_b,                       spawn,                  {.v = (const char*[]){"blueman-applet", NULL}}},
   { MODKEY,			  XK_b,                       spawn,                  {.v = (const char*[]){"blueman-manager", "NULL"}}},
-  { MODKEY,                       XK_n,                       spawn,                  {.v = (const char*[]){"nm-applet", NULL}}},
   { MODKEY|ShiftMask,            XK_n,                       spawn,                  {.v = (const char*[]){"killall", "nm-applet", NULL}}},
 	{ MODKEY,                       XK_j,                       focusstack,             {.i = +1 } },
 	{ MODKEY,                       XK_k,                       focusstack,             {.i = -1 } },
