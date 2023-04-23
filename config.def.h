@@ -93,7 +93,7 @@ static const Key keys[] = {
   { MODKEY|ControlMask,           XK_w,                       spawn,                  {.v = (const char*[]){"libreoffice --writer", NULL}}},
   { MODKEY|ControlMask,           XK_s,                       spawn,                  {.v = (const char*[]){"syncthing", NULL}}},
   { MODKEY|ControlMask|Mod1Mask,  XK_s,                       spawn,                  {.v = (const char*[]){"steam", NULL}}},
-  { MODKEY|Mod1Mask,              XK_s,                       spawn,                  {.v = (const char*[]){"spotify", NULL}}},
+  { MODKEY|Mod1Mask,              XK_s,                       spawn,                  {.v = (const char*[]){"brave-browser", "--app=https://open.spotify.com", NULL}}},
 	{ MODKEY,                       XK_f,                       setlayout,              {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_f,                       setlayout,              {.v = &layouts[0]} },
   { MODKEY,                       XK_p,                       spawn,                  {.v = (const char*[]){"dmenu-power-managment", NULL}}},
