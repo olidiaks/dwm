@@ -89,6 +89,7 @@ static const Key keys[] = {
   	{ MODKEY|ControlMask,           XK_p,                       spawn,                  {.v = (const char*[]){"pavucontrol", NULL}}},
   	{ MODKEY|ControlMask|Mod1Mask,  XK_a,                       spawn,                  SHCMD("wmname 'LG3D'; studio")},
   	{ MODKEY|ControlMask|Mod1Mask,  XK_w,                       spawn,                  {.v = (const char*[]){"webstorm", NULL}}},
+  	{ MODKEY|ControlMask|Mod1Mask,  XK_c,                       spawn,                  {.v = (const char*[]){"clion", NULL}}},
   	{ MODKEY|ControlMask|Mod1Mask,  XK_h,                       spawn,                  {.v = (const char*[]){"phpstorm", NULL}}},
   	{ MODKEY|ControlMask|Mod1Mask,  XK_y,                       spawn,                  {.v = (const char*[]){"pycharm", NULL}}},
   	{ MODKEY|ControlMask|Mod1Mask,  XK_n,                       spawn,                  SHCMD("wmname 'LG3D'; netbeans")},
