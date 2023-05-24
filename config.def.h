@@ -75,7 +75,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return,                  spawn,                  {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return,                  togglescratch,          {.v = scratchpadcmd } },
 	{ 0,                            XF86XK_Calculator,          togglescratch,          STCMD("python")},
-	{ MODKEY|ControlMask|ShiftMask, XK_d,                       spawn,                  SHCMD("sleep 1 && xset dpms force off")},
 	{ 0,                            XK_Print,                   spawn,                  SHCMD("flameshot screen")},
   	{ MODKEY,                     XK_Print,                   spawn,                  SHCMD("flameshot gui")},
   	{ MODKEY,                       XK_m,                       spawn,                  {.v = (const char*[]){"displaysetup", NULL}} },
