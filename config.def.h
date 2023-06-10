@@ -96,6 +96,7 @@ static const Key keys[] = {
   { MODKEY|ControlMask|Mod1Mask,  XK_c,                       spawn,                  {.v = (const char*[]){"clion", NULL}}},
   { MODKEY|ControlMask|Mod1Mask,  XK_h,                       spawn,                  {.v = (const char*[]){"phpstorm", NULL}}},
   { MODKEY|ControlMask|Mod1Mask,  XK_y,                       spawn,                  {.v = (const char*[]){"pycharm", NULL}}},
+  { MODKEY|ControlMask|Mod1Mask,  XK_v,                       spawn,                  {.v = (const char*[]){"virt-manager", NULL}}},
   { MODKEY|ControlMask|Mod1Mask,  XK_n,                       spawn,                  SHCMD("wmname 'LG3D'; netbeans")},
   { MODKEY|ControlMask,           XK_w,                       spawn,                  {.v = (const char*[]){"libreoffice --writer", NULL}}},
   { MODKEY|ControlMask,           XK_s,                       spawn,                  {.v = (const char*[]){"syncthing", NULL}}},
