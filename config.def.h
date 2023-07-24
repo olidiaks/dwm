@@ -121,6 +121,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,                   tagmon,                 {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_period,                  tagmon,                 {.i = -1 } },
 	{ 0,                            XF86XK_AudioMute,		        spawn,		              SHCMD("volume_mute_toggle") },
+	{ 0,                            XF86XK_AudioMicMute,		        spawn,		              SHCMD("volume_mute_toggle_mic") },
 	{ 0,                            XF86XK_AudioRaiseVolume,	  spawn,		              SHCMD("volume_up") },
 	{ 0,                            XF86XK_AudioLowerVolume,	  spawn,		              SHCMD("volume_down") },
   { 0,                            XF86XK_AudioPrev,		        spawn,		              {.v = (const char*[]){ "spt", "playback", "-n", NULL } } },
