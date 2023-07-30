@@ -78,6 +78,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,                       spawn,                  {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,                  spawn,                  {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return,                  togglescratch,          {.v = scratchpadcmd } },
+	{ MODKEY,			XK_F9,			spawn,		{.v = (const char*[]){ "mounter", NULL } } },
+	{ MODKEY,			XK_F10,			spawn,		{.v = (const char*[]){ "unmounter", NULL } } },
 	{ 0,                            XF86XK_Calculator,          togglescratch,          STCMD("python")},
 	{ 0,                            XK_Print,                   spawn,                  SHCMD("flameshot screen")},
   { MODKEY,                     XK_Print,                   spawn,                  SHCMD("flameshot gui")},
