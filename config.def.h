@@ -77,6 +77,7 @@ static const Key keys[] = {
 	/* modifier                     key         function        argument */
 	{ MODKEY,                       XK_d,                       spawn,                  {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,                  spawn,                  {.v = termcmd } },
+	{ MODKEY|ControlMask,           XK_Return,                  spawn,                  {.v = (const char*[]){"st", "-e", "sudo", "-s" } } },
 	{ MODKEY|ShiftMask,             XK_Return,                  togglescratch,          {.v = scratchpadcmd } },
 	{ MODKEY,			XK_F9,			spawn,		{.v = (const char*[]){ "mounter", NULL } } },
 	{ MODKEY,			XK_F10,			spawn,		{.v = (const char*[]){ "unmounter", NULL } } },
