@@ -67,7 +67,7 @@ static const Layout layouts[] = {
 #define STCMD(cmd) { .v = (const char*[]){ "st", "-t", scratchpadname, "-g", "120x34", "-e", cmd, NULL } }
 
 /* defaults */
-static const char browser[] = browser;
+static const char browser[] = "librewolf";
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
