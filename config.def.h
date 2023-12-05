@@ -66,6 +66,9 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 #define STCMD(cmd) { .v = (const char*[]){ "st", "-t", scratchpadname, "-g", "120x34", "-e", cmd, NULL } }
 
+/* defaults */
+static const char browser[] = browser;
+
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
@@ -85,12 +88,12 @@ static const Key keys[] = {
 	{ 0,                            XK_Print,                   spawn,                  SHCMD("flameshot screen")},
   { MODKEY,                     XK_Print,                   spawn,                  SHCMD("flameshot gui")},
   { MODKEY,                       XK_m,                       spawn,                  {.v = (const char*[]){"displaysetup", NULL}} },
-  { MODKEY|ControlMask,           XK_b,                       spawn,                  {.v = (const char*[]){"brave-browser", NULL}}},
-  { MODKEY|ControlMask,           XK_m,                       spawn,                  {.v = (const char*[]){"brave-browser","--app=https://www.facebook.com/messages", NULL}}},
-  { MODKEY|ControlMask,           XK_d,                       spawn,                  {.v = (const char*[]){"librewolf","--app=https://www.diki.pl", NULL}}},
-	{ MODKEY|ControlMask,           XK_v,                       spawn,                  {.v = (const char*[]){"brave-browser","--app=https://uonetplus.vulcan.net.pl/warszawawola", NULL}}},
-  { MODKEY|ControlMask,           XK_t,                       spawn,                  {.v = (const char*[]){"brave-browser","--app=https://teams.microsoft.com", NULL}}},
-	{ MODKEY|ControlMask,           XK_c,                       spawn,                  {.v = (const char*[]){"brave-browser","--app=https://chat.openai.com", NULL}}},
+  { MODKEY|ControlMask,           XK_b,                       spawn,                  {.v = (const char*[]){browser, NULL}}},
+  { MODKEY|ControlMask,           XK_m,                       spawn,                  {.v = (const char*[]){browser,"--app=https://www.facebook.com/messages", NULL}}},
+  { MODKEY|ControlMask,           XK_d,                       spawn,                  {.v = (const char*[]){browser,"--app=https://www.diki.pl", NULL}}},
+	{ MODKEY|ControlMask,           XK_v,                       spawn,                  {.v = (const char*[]){browser,"--app=https://uonetplus.vulcan.net.pl/warszawawola", NULL}}},
+  { MODKEY|ControlMask,           XK_t,                       spawn,                  {.v = (const char*[]){"","--app=https://teams.microsoft.com", NULL}}},
+	{ MODKEY|ControlMask,           XK_c,                       spawn,                  {.v = (const char*[]){browser,"--app=https://chat.openai.com", NULL}}},
   { MODKEY|ControlMask,           XK_w,                       spawn,                  {.v = (const char*[]){"libreoffice", "--writer", NULL}}},
   { MODKEY|ControlMask,           XK_n,                       spawn,                  {.v = (const char*[]){"thunar", NULL}}},
   { MODKEY|ControlMask,           XK_p,                       spawn,                  {.v = (const char*[]){"pavucontrol", NULL}}},
@@ -105,7 +108,6 @@ static const Key keys[] = {
   { MODKEY|ControlMask,           XK_s,                       spawn,                  {.v = (const char*[]){"syncthing", NULL}}},
   { MODKEY|ControlMask|Mod1Mask,  XK_s,                       spawn,                  {.v = (const char*[]){"steam", NULL}}},
   { MODKEY|Mod1Mask,			XK_v,                       spawn,                  {.v = (const char*[]){"virt-manager", NULL}}},
-//	{ MODKEY|Mod1Mask,              XK_s,                       spawn,                  {.v = (const char*[]){"brave-browser", "--app=https://open.spotify.com", NULL}}},
 	{ MODKEY|Mod1Mask,              XK_s,                       spawn,                  {.v = (const char*[]){"spotify", NULL}}},
 	{ MODKEY|Mod1Mask,              XK_m,                       spawn,                  {.v = (const char*[]){"signal-desktop", NULL}}},
 	{ MODKEY,                       XK_f,                       setlayout,              {.v = &layouts[3]} },
