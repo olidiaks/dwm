@@ -78,22 +78,22 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34
 
 static const Key keys[] = {
 	/* modifier                     key         function        argument */
-	{ MODKEY,                       XK_d,                       spawn,                  {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return,                  spawn,                  {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_Return,                  togglescratch,          {.v = scratchpadcmd } },
-	{ MODKEY,			XK_F8,			spawn,		{.v = (const char*[]){ "toogle_touchpad", NULL } } },
-	{ MODKEY,			XK_F9,			spawn,		{.v = (const char*[]){ "mounter", NULL } } },
-	{ MODKEY,			XK_F10,			spawn,		{.v = (const char*[]){ "unmounter", NULL } } },
-	{ 0,                            XF86XK_Calculator,          togglescratch,          STCMD("python")},
-	{ 0,                            XK_Print,                   spawn,                  SHCMD("flameshot screen")},
+  { MODKEY,                       XK_d,                       spawn,                  {.v = dmenucmd } },
+  { MODKEY,                       XK_Return,                  spawn,                  {.v = termcmd } },
+  { MODKEY|ShiftMask,             XK_Return,                  togglescratch,          {.v = scratchpadcmd } },
+  { MODKEY,			XK_F8,			spawn,		{.v = (const char*[]){ "toogle_touchpad", NULL } } },
+  { MODKEY,			XK_F9,			spawn,		{.v = (const char*[]){ "mounter", NULL } } },
+  { MODKEY,			XK_F10,			spawn,		{.v = (const char*[]){ "unmounter", NULL } } },
+  { 0,                            XF86XK_Calculator,          togglescratch,          STCMD("python")},
+  { 0,                            XK_Print,                   spawn,                  SHCMD("flameshot screen")},
   { MODKEY,                     XK_Print,                   spawn,                  SHCMD("flameshot gui")},
   { MODKEY,                       XK_m,                       spawn,                  {.v = (const char*[]){"displaysetup", NULL}} },
   { MODKEY|ControlMask,           XK_b,                       spawn,                  {.v = (const char*[]){browser, NULL}}},
   { MODKEY|ControlMask,           XK_m,                       spawn,                  {.v = (const char*[]){browser,"--app=https://www.facebook.com/messages", NULL}}},
   { MODKEY|ControlMask,           XK_d,                       spawn,                  {.v = (const char*[]){browser,"--app=https://www.diki.pl", NULL}}},
-	{ MODKEY|ControlMask,           XK_v,                       spawn,                  {.v = (const char*[]){browser,"--app=https://uonetplus.vulcan.net.pl/warszawawola", NULL}}},
+  { MODKEY|ControlMask,           XK_v,                       spawn,                  {.v = (const char*[]){browser,"--app=https://uonetplus.vulcan.net.pl/warszawawola", NULL}}},
   { MODKEY|ControlMask,           XK_t,                       spawn,                  {.v = (const char*[]){"","--app=https://teams.microsoft.com", NULL}}},
-	{ MODKEY|ControlMask,           XK_c,                       spawn,                  {.v = (const char*[]){browser,"--app=https://chat.openai.com", NULL}}},
+  { MODKEY|ControlMask,           XK_c,                       spawn,                  {.v = (const char*[]){browser,"--app=https://chat.openai.com", NULL}}},
   { MODKEY|ControlMask,           XK_w,                       spawn,                  {.v = (const char*[]){"libreoffice", "--writer", NULL}}},
   { MODKEY|ControlMask,           XK_n,                       spawn,                  {.v = (const char*[]){"thunar", NULL}}},
   { MODKEY|ControlMask,           XK_p,                       spawn,                  {.v = (const char*[]){"pavucontrol", NULL}}},
@@ -108,45 +108,45 @@ static const Key keys[] = {
   { MODKEY|ControlMask,           XK_s,                       spawn,                  {.v = (const char*[]){"syncthing", NULL}}},
   { MODKEY|ControlMask|Mod1Mask,  XK_s,                       spawn,                  {.v = (const char*[]){"steam", NULL}}},
   { MODKEY|Mod1Mask,			XK_v,                       spawn,                  {.v = (const char*[]){"virt-manager", NULL}}},
-	{ MODKEY|Mod1Mask,              XK_s,                       spawn,                  {.v = (const char*[]){"spotify", NULL}}},
-	{ MODKEY|Mod1Mask,              XK_m,                       spawn,                  {.v = (const char*[]){"signal-desktop", NULL}}},
-	{ MODKEY,                       XK_f,                       setlayout,              {.v = &layouts[3]} },
-	{ MODKEY|ShiftMask,             XK_f,                       setlayout,              {.v = &layouts[0]} },
+  { MODKEY|Mod1Mask,              XK_s,                       spawn,                  {.v = (const char*[]){"spotify", NULL}}},
+  { MODKEY|Mod1Mask,              XK_m,                       spawn,                  {.v = (const char*[]){"signal-desktop", NULL}}},
+  { MODKEY,                       XK_f,                       setlayout,              {.v = &layouts[3]} },
+  { MODKEY|ShiftMask,             XK_f,                       setlayout,              {.v = &layouts[0]} },
   { MODKEY,                       XK_p,                       spawn,                  {.v = (const char*[]){"dmenu-power-managment", NULL}}},
+  { MODKEY,			  XK_l,			      spawn,			{. v = (const char*[]){"xlock", "NULL"}}	},
   { MODKEY|ShiftMask,             XK_n,                       spawn,                  {.v = (const char*[]){"killall", "nm-applet", NULL}}},
-	{ MODKEY,                       XK_j,                       focusstack,             {.i = +1 } },
-	{ MODKEY,                       XK_k,                       focusstack,             {.i = -1 } },
-	{ MODKEY,                       XK_h,                       setmfact,               {.f = -0.05} },
-	{ MODKEY,                       XK_l,                       setmfact,               {.f = +0.05} },
-	{ MODKEY,                       XK_space,                   zoom,                   {0} },
-	{ MODKEY|ShiftMask,             XK_q,                       killclient,             {0} },
-	{ MODKEY|ShiftMask,             XK_space,                   togglefloating,         {0} },
-	{ MODKEY,                       XK_0,                       view,                   {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,                       tag,                    {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,                   focusmon,               {.i = +1 } },
-	{ MODKEY,                       XK_period,                  focusmon,               {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_comma,                   tagmon,                 {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_period,                  tagmon,                 {.i = -1 } },
-	{ 0,                            XF86XK_AudioMute,		        spawn,		              SHCMD("volume_mute_toggle") },
-	{ 0,                            XF86XK_AudioMicMute,		        spawn,		              SHCMD("volume_mute_toggle_mic") },
-	{ 0,                            XF86XK_AudioRaiseVolume,	  spawn,		              SHCMD("volume_up") },
-	{ 0,                            XF86XK_AudioLowerVolume,	  spawn,		              SHCMD("volume_down") },
+  { MODKEY,                       XK_j,                       focusstack,             {.i = +1 } },
+  { MODKEY,                       XK_k,                       focusstack,             {.i = -1 } },
+  { MODKEY,                       XK_h,                       setmfact,               {.f = -0.05} },
+  { MODKEY,                       XK_l,                       setmfact,               {.f = +0.05} },
+  { MODKEY,                       XK_space,                   zoom,                   {0} },
+  { MODKEY|ShiftMask,             XK_q,                       killclient,             {0} },
+  { MODKEY|ShiftMask,             XK_space,                   togglefloating,         {0} },
+  { MODKEY,                       XK_0,                       view,                   {.ui = ~0 } },
+  { MODKEY|ShiftMask,             XK_0,                       tag,                    {.ui = ~0 } },
+  { MODKEY,                       XK_comma,                   focusmon,               {.i = +1 } },
+  { MODKEY,                       XK_period,                  focusmon,               {.i = -1 } },
+  { MODKEY|ShiftMask,             XK_comma,                   tagmon,                 {.i = +1 } },
+  { MODKEY|ShiftMask,             XK_period,                  tagmon,                 {.i = -1 } },
+  { 0,                            XF86XK_AudioMute,		        spawn,		              SHCMD("volume_mute_toggle") },
+  { 0,                            XF86XK_AudioMicMute,		        spawn,		              SHCMD("volume_mute_toggle_mic") },
+  { 0,                            XF86XK_AudioRaiseVolume,	  spawn,		              SHCMD("volume_up") },
+  { 0,                            XF86XK_AudioLowerVolume,	  spawn,		              SHCMD("volume_down") },
   { 0,                            XF86XK_AudioPrev,		        spawn,		              {.v = (const char*[]){ "spt", "playback", "-n", NULL } } },
-	{ 0,                            XF86XK_AudioNext,		        spawn,		              {.v = (const char*[]){ "spt", "playback", "-p", NULL } } },
-	{ 0,                            XF86XK_AudioPlay,		        spawn,		              {.v = (const char*[]){ "spt", "playback", "-t", NULL } } },
-//	{ 0,                            XF86XK_AudioStop,		        spawn,		              {.v = (const char*[]){ "spt", "playback", NULL } } },
-	{ 0,                            XF86XK_MonBrightnessUp,	    spawn,		              {.v = (const char*[]){ "light", "-A", "5", NULL } } },
-	{ 0,                            XF86XK_MonBrightnessDown,	  spawn,		              {.v = (const char*[]){ "light", "-U", "5", NULL } } },
-	TAGKEYS(                        XK_1,                                               0)
-	TAGKEYS(                        XK_2,                                               1)
-	TAGKEYS(                        XK_3,                                               2)
-	TAGKEYS(                        XK_4,                                               3)
-	TAGKEYS(                        XK_5,                                               4)
-	TAGKEYS(                        XK_6,                                               5)
-	TAGKEYS(                        XK_7,                                               6)
-	TAGKEYS(                        XK_8,                                               7)
-	TAGKEYS(                        XK_9,                                               8)
-	{ MODKEY,                       XK_q,                       quit,                   {0} },
+  { 0,                            XF86XK_AudioNext,		        spawn,		              {.v = (const char*[]){ "spt", "playback", "-p", NULL } } },
+  { 0,                            XF86XK_AudioPlay,		        spawn,		              {.v = (const char*[]){ "spt", "playback", "-t", NULL } } },
+  { 0,                            XF86XK_MonBrightnessUp,	    spawn,		              {.v = (const char*[]){ "light", "-A", "5", NULL } } },
+  { 0,                            XF86XK_MonBrightnessDown,	  spawn,		              {.v = (const char*[]){ "light", "-U", "5", NULL } } },
+  TAGKEYS(                        XK_1,                                               0)
+  TAGKEYS(                        XK_2,                                               1)
+  TAGKEYS(                        XK_3,                                               2)
+  TAGKEYS(                        XK_4,                                               3)
+  TAGKEYS(                        XK_5,                                               4)
+  TAGKEYS(                        XK_6,                                               5)
+  TAGKEYS(                        XK_7,                                               6)
+  TAGKEYS(                        XK_8,                                               7)
+  TAGKEYS(                        XK_9,                                               8)
+  { MODKEY,                       XK_q,                       quit,                   {0} },
 };
 
 /* button definitions */
