@@ -83,8 +83,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return,                  spawn,                  {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return,                  togglescratch,          {.v = scratchpadcmd } },
 	{ MODKEY,			XK_F8,			spawn,		{.v = (const char*[]){ "toogle_touchpad", NULL } } },
-	{ MODKEY,			XK_F9,			spawn,		{.v = (const char*[]){ "mounter", NULL } } },
-	{ MODKEY,			XK_F10,			spawn,		{.v = (const char*[]){ "unmounter", NULL } } },
 	{ 0,                            XF86XK_Calculator,          togglescratch,          STCMD("python")},
 	{ 0,                            XK_Print,                   spawn,                  SHCMD("flameshot screen")},
   { MODKEY,                     XK_Print,                   spawn,                  SHCMD("flameshot gui")},
@@ -136,8 +134,8 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_AudioNext,		        spawn,		              {.v = (const char*[]){ "spt", "playback", "-p", NULL } } },
 	{ 0,                            XF86XK_AudioPlay,		        spawn,		              {.v = (const char*[]){ "spt", "playback", "-t", NULL } } },
 //	{ 0,                            XF86XK_AudioStop,		        spawn,		              {.v = (const char*[]){ "spt", "playback", NULL } } },
-	{ 0,                            XF86XK_MonBrightnessUp,	    spawn,		              {.v = (const char*[]){ "light", "-A", "5", NULL } } },
-	{ 0,                            XF86XK_MonBrightnessDown,	  spawn,		              {.v = (const char*[]){ "light", "-U", "5", NULL } } },
+	{ 0,                            XF86XK_MonBrightnessUp,	    spawn,		              {.v = (const char*[]){"brightnessctl","s","10%+"} } },
+	{ 0,                            XF86XK_MonBrightnessDown,	  spawn,		              {.v = (const char*[]){"brightnessctl","s","10%-"} } },
 	TAGKEYS(                        XK_1,                                               0)
 	TAGKEYS(                        XK_2,                                               1)
 	TAGKEYS(                        XK_3,                                               2)
